@@ -1,0 +1,54 @@
+{
+    "name": "zetas/openrequest-provider-sonarr",
+    "description": "Sonarr provider package for OpenRequest",
+    "keywords": [
+        "zetas",
+        "openrequest-provider-sonarr"
+    ],
+    "homepage": "https://github.com/zetas/openrequest-provider-sonarr",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "David Della Vecchia",
+            "email": "ddv@ddellav.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zetas\\OpenrequestProviderSonarr\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zetas\\OpenrequestProviderSonarr\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zetas\\OpenrequestProviderSonarr\\OpenrequestProviderSonarrServiceProvider"
+            ],
+            "aliases": {
+                "OpenrequestProviderSonarr": "Zetas\\OpenrequestProviderSonarr\\OpenrequestProviderSonarrFacade"
+            }
+        }
+    }
+}
